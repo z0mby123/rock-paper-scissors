@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Function scope example</title>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+
+        </style>
+    </head>
+
+    <body>
+
+        <script>
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * Math.floor(max));
+            }
+            var winner = 'the winner is ';
+
+            function computerplay() {
+                var rock = 'rock';
+                var paper = 'paper';
+                var scissors = 'scissors';
+                var selector = getRandomInt(3);
+                if (selector == 0) {
+                    //return rock
+                    return rock;
+                } else if (selector == 1) {
+                    //return scissors
+                    return scissors;
+                } else if (selector == 2) {
+                    //return paper
+                    return paper;
+                } else {
+                    console.log('error')
+                }
+            }
+            var computerselection = computerplay();
+            var playerselection = prompt();
+            if (playerselection == playerselection.toUpperCase() || playerselection == playerselection.toLowerCase()) {
+                function playRound(playerSelection, computerelection) {
+                    if (playerselection == 'rock' && computerselection == 'scissors') {
+
+                        return winner + playerselection;
+
+                    } else if (playerselection == 'scissors' && computeterselection == 'paper') {
+                        return winner + playerselection;
+                    } else if (playerselection == 'paper' && computeterselection == 'rock') {
+                        return winner + playerselection;
+                    } else if (computerselection == 'paper' && playerSelection == 'rock') {
+                        return winner + computerselection;
+                    } else if (computerselection == 'scissors' && playerSelection == 'paper') {
+                        return winner + computerselection;
+                    } else if (computerselection == 'rock' && playerSelection == 'scissors') {
+                        return winner + computerselection;
+                    } else if (playerselection == computerselection) {
+                        console.log('draw')
+                    }
+
+
+
+                }
+            }
+        </script>
+    </body>
+
+    </html>
