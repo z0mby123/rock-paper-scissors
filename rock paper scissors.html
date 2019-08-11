@@ -17,7 +17,8 @@
             function getRandomInt(max) {
                 return Math.floor(Math.random() * Math.floor(max));
             }
-            var winner = 'the winner is ';
+            var computer = 'the computer winner is ';
+            var human = 'the human winner is';
 
             function computerplay() {
                 var rock = 'rock';
@@ -39,30 +40,30 @@
             }
             var computerselection = computerplay();
             var playerselection = prompt();
-            if (playerselection == playerselection.toUpperCase() || playerselection == playerselection.toLowerCase()) {
-                function playRound(playerSelection, computerelection) {
-                    if (playerselection == 'rock' && computerselection == 'scissors') {
+            //if (playerselection == playerselection.toUpperCase() || playerselection == playerselection.toLowerCase()) {
+            function playRound(playerSelection, computerelection) {
+                if (playerselection == 'rock' && computerselection == 'scissors') {
 
-                        return winner + playerselection;
+                    return human + playerselection;
 
-                    } else if (playerselection == 'scissors' && computeterselection == 'paper') {
-                        return winner + playerselection;
-                    } else if (playerselection == 'paper' && computeterselection == 'rock') {
-                        return winner + playerselection;
-                    } else if (computerselection == 'paper' && playerSelection == 'rock') {
-                        return winner + computerselection;
-                    } else if (computerselection == 'scissors' && playerSelection == 'paper') {
-                        return winner + computerselection;
-                    } else if (computerselection == 'rock' && playerSelection == 'scissors') {
-                        return winner + computerselection;
-                    } else if (playerselection == computerselection) {
-                        console.log('draw')
-                    }
-
-
-
+                } else if (playerselection == 'scissors' && computeterselection == 'paper') {
+                    return human + playerselection;
+                } else if (playerselection == 'paper' && computeterselection == 'rock') {
+                    return human + playerselection;
+                } else if (computerselection == 'paper' && playerSelection == 'rock') {
+                    return computer + computerselection;
+                } else if (computerselection == 'scissors' && playerSelection == 'paper') {
+                    return computer + computerselection;
+                } else if (computerselection == 'rock' && playerSelection == 'scissors') {
+                    return computer + computerselection;
+                } else if (playerselection == computerselection) {
+                    console.log('draw')
                 }
+
+
+
             }
+            //}
         </script>
     </body>
 
