@@ -14,6 +14,27 @@
     <body>
 
         <script>
+           // function determintetoupper(playerselection){
+             //  if(playerselection-)
+
+            //}
+            var nextcall=false;
+            function determinator(game,secondvar){ 
+            if(game()){
+             nextcall=true;
+             if(nextcall){
+                var rounds=5;
+                 rounds--;
+                rounds=rounds;
+                 nextcall=false;
+                 console.log('there are ' + rounds +'remaining');
+                 
+             }
+
+            }
+           }
+              var playerwinner;
+             var computerwinner;
             function getRandomInt(max) {
                 return Math.floor(Math.random() * Math.floor(max));
             }
@@ -38,32 +59,63 @@
                     console.log('error')
                 }
             }
-            var computerselection = computerplay();
-            var playerselection = prompt();
-            //if (playerselection == playerselection.toUpperCase() || playerselection == playerselection.toLowerCase()) {
-            function playRound(playerSelection, computerelection) {
+            
+            //mistake is probably at the conditionals sedction
+            // typos mistakes in this function fixed 
+            //HUGE MISTAKE IN THE SECTION WHERE I DEFINE THE FUNCTION AND THERE IS AN IF STATEMNT fixed
+
+
+           
+
+            function playRound(playerselection, computerselection) {
                 if (playerselection == 'rock' && computerselection == 'scissors') {
 
                     return human + playerselection;
 
-                } else if (playerselection == 'scissors' && computeterselection == 'paper') {
+                }
+                 else if (playerselection == 'scissors' && computerselection == 'paper') {
                     return human + playerselection;
-                } else if (playerselection == 'paper' && computeterselection == 'rock') {
+                }
+                 else if (playerselection == 'paper' && computerselection == 'rock') {
                     return human + playerselection;
-                } else if (computerselection == 'paper' && playerSelection == 'rock') {
+                }
+                 else if (computerselection == 'paper' && playerselection == 'rock') {
                     return computer + computerselection;
-                } else if (computerselection == 'scissors' && playerSelection == 'paper') {
+                }
+                 else if (computerselection == 'scissors' && playerselection == 'paper') {
                     return computer + computerselection;
-                } else if (computerselection == 'rock' && playerSelection == 'scissors') {
+                }
+                 else if (computerselection == 'rock' && playerselection == 'scissors') {
                     return computer + computerselection;
-                } else if (playerselection == computerselection) {
+                }
+                 else if (playerselection == computerselection) {
                     console.log('draw')
                 }
 
 
 
             }
-            //}
+            function game(){
+           
+            
+            //var oldvalue;
+            //oldvalue=rounds;
+            //var newvalue=oldvalue-1;
+            //rounds=newvalue;
+            
+               var  playerselection = prompt();
+            var computerselection = computerplay();           
+            if (playerselection === playerselection.toUpperCase() || playerselection === playerselection.toLowerCase()) {
+            playRound(playerselection,computerselection);
+            var result=playRound(playerselection,computerselection);
+            alert(result);
+             determinator(game(),nextcall);
+            }
+              
+            }
+            game();
+            
+           
         </script>
     </body>
 
