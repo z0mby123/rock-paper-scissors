@@ -14,34 +14,34 @@
     <body>
 
         <script>
-           // function determintetoupper(playerselection){
-             //  if(playerselection-)
+            var rounds = 1;
+            var second = rounds
+            let cwin = rounds;
+            let pwin = rounds;
 
-            //}
-            var nextcall=false;
-            function determinator(game,secondvar){ 
-            if(game()){
-             nextcall=true;
-             if(nextcall){
-                var rounds=5;
-                 rounds--;
-                rounds=rounds;
-                 nextcall=false;
-                 console.log('there are ' + rounds +'remaining');
-                 
-             }
+
+            function determinator() {
+                if (second < 5) {
+                    second++;
+                    console.log('there are ' + second + 'remaining');
+                }
+
+
+
 
             }
-           }
-              var playerwinner;
-             var computerwinner;
+
+            let playerwinner;
+            let computerwinner;
+
             function getRandomInt(max) {
                 return Math.floor(Math.random() * Math.floor(max));
             }
             var computer = 'the computer winner is ';
             var human = 'the human winner is';
+            var draw = 'draw';
 
-            function computerplay() {
+            function computerPlay() {
                 var rock = 'rock';
                 var paper = 'paper';
                 var scissors = 'scissors';
@@ -59,63 +59,56 @@
                     console.log('error')
                 }
             }
-            
-            //mistake is probably at the conditionals sedction
-            // typos mistakes in this function fixed 
-            //HUGE MISTAKE IN THE SECTION WHERE I DEFINE THE FUNCTION AND THERE IS AN IF STATEMNT fixed
-
-
-           
 
             function playRound(playerselection, computerselection) {
                 if (playerselection == 'rock' && computerselection == 'scissors') {
 
-                    return human + playerselection;
+                    console.log(human + playerselection);
+                    pwin++
+                    console.log('the player has won ' + pwin + 'times')
+                } else if (playerselection == 'scissors' && computerselection == 'paper') {
+                    console.log(human + playerselection);
+                    pwin++
+                    console.log('the  player has won ' + pwin + 'times')
+                } else if (playerselection == 'paper' && computerselection == 'rock') {
 
-                }
-                 else if (playerselection == 'scissors' && computerselection == 'paper') {
-                    return human + playerselection;
-                }
-                 else if (playerselection == 'paper' && computerselection == 'rock') {
-                    return human + playerselection;
-                }
-                 else if (computerselection == 'paper' && playerselection == 'rock') {
-                    return computer + computerselection;
-                }
-                 else if (computerselection == 'scissors' && playerselection == 'paper') {
-                    return computer + computerselection;
-                }
-                 else if (computerselection == 'rock' && playerselection == 'scissors') {
-                    return computer + computerselection;
-                }
-                 else if (playerselection == computerselection) {
-                    console.log('draw')
+                    console.log(human + playerselection);
+                    pwin++;
+                    console.log('the player has won ' + pwin + 'times')
+                } else if (computerselection == 'paper' && playerselection == 'rock') {
+                    console.log(computer + computerselection);
+                    cwin++
+                    console.log('the computer has won ' + cwin + 'times');
+                } else if (computerselection == 'scissors' && playerselection == 'paper') {
+
+                    console.log(computer + computerselection);
+                    cwin++
+                    console.log('the  computer has won ' + cwin + 'times');
+                } else if (computerselection == 'rock' && playerselection == 'scissors') {
+                    console.log(computer + computerselection);
+                    cwin++
+                    console.log('the computer  has won ' + cwin + 'times');
+                } else if (playerselection == computerselection) {
+                    console.log('draw');
+                } else {
+                    console.log('error');
                 }
 
 
 
             }
-            function game(){
-           
-            
-            //var oldvalue;
-            //oldvalue=rounds;
-            //var newvalue=oldvalue-1;
-            //rounds=newvalue;
-            
-               var  playerselection = prompt();
-            var computerselection = computerplay();           
-            if (playerselection === playerselection.toUpperCase() || playerselection === playerselection.toLowerCase()) {
-            playRound(playerselection,computerselection);
-            var result=playRound(playerselection,computerselection);
-            alert(result);
-             determinator(game(),nextcall);
+
+            function game() {
+                let rock = 0;
+                let paper = 1;
+                let scissors = 2;
+                playerselection = prompt().toLowerCase();
+                computerselection = computerPlay();
+
+                playRound(playerselection, computerselection);
+                determinator();
+
             }
-              
-            }
-            game();
-            
-           
         </script>
     </body>
 
